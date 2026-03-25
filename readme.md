@@ -31,6 +31,69 @@ k8s-practice/
 * Kind installed
 * kubectl installed
 
+# Installation Guide
+
+## 1. Install Docker
+
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+Verify:
+
+```bash
+docker --version
+```
+
+---
+
+## 2. Install kubectl
+
+```bash
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin
+kubectl version --short --client
+```
+
+```bash
+kubectl version --client
+```
+
+---
+
+## 3. Install Kind (Kubernetes in Docker)
+
+```bash
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+
+chmod +x kind
+sudo mv kind /usr/local/bin/
+```
+
+Verify:
+
+```bash
+kind --version
+```
+
+---
+
+## 4. Create Kubernetes Cluster
+
+```bash
+kind create cluster
+```
+
+Check cluster:
+
+```bash
+kubectl get nodes
+```
+
 ---
 
 ## 🚀 Setup Steps

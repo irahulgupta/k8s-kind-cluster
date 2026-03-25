@@ -159,3 +159,7 @@ This is a basic Kubernetes setup to understand:
 * Deploying and exposing an application
 
 ---
+$ kubectl port-forward service/notes-app-service -n notes 8000:8000 --address=0.0.0.0
+
+
+
